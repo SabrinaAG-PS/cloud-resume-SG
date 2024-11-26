@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <title>e</title>
+  <link rel="stylesheet" type="text/css" href="resume-css.css"/>
+  <!-- Number of visits displayed below -->
+  <p>This site currently has <span id="visitCount"></span> views.</p>
+  <script>
+    //API Gateway Invoke URL
+    const apiUrl = 'https://eeztzkn9u3.execute-api.us-east-1.amazonaws.com/prod/visit-count';
+ 
+    // Fetch the visit count from the API
+    fetch(apiUrl)
+             .then(response => response.json()) // Convert the API response to JSON format
+             .then(data => {
+ 
+      // Update the content of the span with id 'visitCount' to display the visit count
+                 document.getElementById('visitCount').textContent = data.visit_count; 
+ 
+             })
+             .catch(error => console.error('Error fetching visit count:', error)); // Log any errors that occur during fetch
+   </script>
+</head>
+<div id="header"></div>
+<div class="left"></div>
+<div class="stuff">
+<br></br>
+  <h1>Sabrina Grosse</h1>
+  <h2>DevOps Engineer</h2>
+  <h3>5886 E. Woodmont Ave. Cincinnati, OH 45213</h3>
+  <h4>sabrina.grosse19@gmail.com</h4>
+<!-- <br></br> -->
+  <h4>SKILLS</h4>
+  <ul>
+    <li>AWS Services</li>
+    <li>Kubernetes</li>
+    <li>GitHub</li>
+    <li>Docker</li>
+    <li>Bash</li>
+  </ul>
+  <h4>EDUCATION</h4>
+  <ul>
+      <li>University of Cincinnati</li>
+      <ul>
+        <li>Information Technology (B.S)</li>
+      </ul>
+  </ul>
+  <h4>EXPERIENCE</h4>
+  <ul>
+    <li>DevOps Engineer</li>
+    <li>Process Manager</li>
+    <li>Floor Planning Analyst</li>
+    <li>Contractor</li>
+      <ul>
+        <li>Operations Analyst</li>
+        <li>Technical Analyst</li>
+      </ul>
+  </ul>
+  <h4>ACTIVITIES</h4>
+  <ul>
+    <li>Volunteer at Civic Garden Center</li>
+    <li>Running in the Flying Pig</li>
+    <li>Rock Climbing</li>
+    <li>Book Club</li>
+  </ul>
+</div>
+<div class="right"></div>
+<div id="footer">
+  <h3 id="name">Sabrina Grosse</h3></div>
+
